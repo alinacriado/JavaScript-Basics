@@ -1,17 +1,16 @@
-const age = '18';
-const userName = 'Vasiliy';
+// Примеры false
 
-console.log(age + 5); // 185
-console.log(Number(age) + 5); // 23
-console.log(age - 5); //13 (-, /, *)
-console.log(Number(userName) - 5); //NaN (Not a Number)
-console.log(typeof NaN); // number
+console.log(Boolean(0));
+console.log(Boolean(''));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+let a;
+console.log(Boolean(a)); // console.log(Boolean(undefined));
+console.log(Boolean(Number('sf'))); // console.log(Boolean(NaN));
+console.log(Boolean(NaN));
 
-console.log(String(4) + 7); // 47
+// Примеры true
 
-console.log(Boolean(1)); // true - все числа кроме 0 true
-console.log(Boolean(0)); // false
-
-console.log(Boolean('jhjhihi')); // true
-console.log(Boolean('')); // false - пустая строка
-
+console.log(Boolean(156));
+console.log(Boolean(-156));
+console.log(Boolean('hkjcbjkdbcvkj'));
