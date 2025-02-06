@@ -1,16 +1,25 @@
-// Примеры false
+const money = 100;
+const canBuy = money > 50;
 
-console.log(Boolean(0));
-console.log(Boolean(''));
-console.log(Boolean(null));
-console.log(Boolean(undefined));
-let a;
-console.log(Boolean(a)); // console.log(Boolean(undefined));
-console.log(Boolean(Number('sf'))); // console.log(Boolean(NaN));
-console.log(Boolean(NaN));
+if (canBuy) {
+  console.log('Могу купить');
+}
 
-// Примеры true
+if (money > 50) {
+  console.log('Могу купить');
+}
 
-console.log(Boolean(156));
-console.log(Boolean(-156));
-console.log(Boolean('hkjcbjkdbcvkj'));
+if (money > 50) {
+  console.log('Могу купить');
+} else {
+  console.log('Не могу купить');
+}
+
+if (money > 50) {
+  console.log('Могу купить');
+} else if (money > 5) {
+  console.log('Могу купить что-то маленькое');
+}
+else {
+  console.log('Не могу купить');
+}
