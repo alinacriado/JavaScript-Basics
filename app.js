@@ -1,12 +1,15 @@
-let a = 5; // number
-let b = 5.4; // number
-console.log(typeof a);
-a = 'stroka'; // string
-let isAdmin = false; // boolean
-let isMore = a > 10; // boolean
-console.log(typeof isAdmin);
+const projectName = 'Сайт магазина';
+const price = 2000;
+const author = 'Василий';
 
-let c; // undefined - в переменной не задано значение
-console.log(typeof c);
+const template = author + ' заказал ' + projectName;
+const template2 = `${author} заказал ${projectName}`;
 
-let d = null; // пустое значение (тип в консоли - object)
+const template3 = 'Проект \n' + 'Цена: ' + price;
+const template4 = `Проект
+Цена: ${price}`;
+
+console.log(template);
+console.log(template2);
+console.log(template3);
+console.log(template4);
