@@ -1,15 +1,12 @@
-const width = 10;
-const hight = 5;
-const space = 10 * 5;
-const newSpace = width * hight;
-const newWidth = width + 3;
-const division = width / newWidth;
-const volume = 2 ** 3; // 2 * 2 * 2
-console.log(space);
+let a = 5; // number
+let b = 5.4; // number
+console.log(typeof a);
+a = 'stroka'; // string
+let isAdmin = false; // boolean
+let isMore = a > 10; // boolean
+console.log(typeof isAdmin);
 
-//Строки
+let c; // undefined - в переменной не задано значение
+console.log(typeof c);
 
-const city = 'Moscow';
-const street = 'Kerveskaya';
-console.log(city + ', ' + street); // сложение строк - конкатенация
-console.log(city + ', ' + street + ' ' + 5); // 5 становится строкой
+let d = null; // пустое значение (тип в консоли - object)
