@@ -1,15 +1,17 @@
-const projectName = 'Сайт магазина';
-const price = 2000;
-const author = 'Василий';
+const age = '18';
+const userName = 'Vasiliy';
 
-const template = author + ' заказал ' + projectName;
-const template2 = `${author} заказал ${projectName}`;
+console.log(age + 5); // 185
+console.log(Number(age) + 5); // 23
+console.log(age - 5); //13 (-, /, *)
+console.log(Number(userName) - 5); //NaN (Not a Number)
+console.log(typeof NaN); // number
 
-const template3 = 'Проект \n' + 'Цена: ' + price;
-const template4 = `Проект
-Цена: ${price}`;
+console.log(String(4) + 7); // 47
 
-console.log(template);
-console.log(template2);
-console.log(template3);
-console.log(template4);
+console.log(Boolean(1)); // true - все числа кроме 0 true
+console.log(Boolean(0)); // false
+
+console.log(Boolean('jhjhihi')); // true
+console.log(Boolean('')); // false - пустая строка
+
