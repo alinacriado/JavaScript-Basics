@@ -1,27 +1,21 @@
-const fordFocusPrice = 10000;
-const budget = 20000;
-let message;
+const result = prompt('Сколько будет 7 + или - 15?');
 
-if (budget > fordFocusPrice) {
-  message = 'Ford';
+/* if (Number(result) === 22) {
+  console.log('Успех');
+} else if (Number(result) === -8) {
+  console.log('Успех');
+} else if (result === 'Я не робот') {
+  console.log('Успех');
 } else {
-  message = 'Велосипед';
+  console.log('Вы робот');
+} */
+
+switch (true) {
+  case Number(result) === 22:
+  case Number(result) === -8:
+  case result === 'Я не робот':
+    console.log('Успех');
+    break;
+  default:
+    console.log('Вы робот');
 }
-console.log(`Могу купить ${message}`);
-// или
-console.log(`Могу купить ${budget > fordFocusPrice ? 'Ford' : 'Велосипед'}`);
-
-//Числа
-
-10 > 0 ? console.log('Больше 0') : console.log('Не больше 0');
-
-if (10 > 0) {
-  console.log('Больше 0');
-} else {
-  console.log('Не больше 0');
-}
-
-//Альтернатива
-
-const str = 10 > 0 ? 'Больше 0' : 'Не больше 0'; // строка передается с в переменную
-console.log(str);
