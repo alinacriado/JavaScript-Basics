@@ -1,15 +1,17 @@
-function canAccessWebsite(age) {
-  if (age < 18) {
-    return false;
-  }
-  return true; //else {
-               //   return true;
-               // }
+const KG_IN_USD = 7;
+const KM_IN_USD = 5;
+
+function calculateWeightCost(presentWeight) {
+  return presentWeight * KG_IN_USD;
 }
-console.log(canAccessWebsite(16));
 
-const canAccessWebsite2 = age => age < 18 ? false : true;
-console.log(canAccessWebsite2(18));
+function calculateDistanceCost(distance) {
+  return distance * KM_IN_USD;
+}
 
-const canAccessWebsite3 = age => age < 18 ? 'No' : 'Yes';
-console.log(canAccessWebsite3(19));
+function getExchangePrice(present1, present2, distance) {
+  const price1 = calculateWeightCost(present1);
+  const price2 = calculateWeightCost(present2);
+  const distanceCost = calculateDistanceCost(distance);
+  return price1 + price2 + distanceCost;
+}
