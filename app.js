@@ -1,21 +1,27 @@
-const result = prompt('Сколько будет 7 + или - 15?');
+// function logName() {
+//   console.log('Моё имя Антон');
+// }
 
-/* if (Number(result) === 22) {
-  console.log('Успех');
-} else if (Number(result) === -8) {
-  console.log('Успех');
-} else if (result === 'Я не робот') {
-  console.log('Успех');
-} else {
-  console.log('Вы робот');
-} */
+// logName();
 
-switch (true) {
-  case Number(result) === 22:
-  case Number(result) === -8:
-  case result === 'Я не робот':
-    console.log('Успех');
-    break;
-  default:
-    console.log('Вы робот');
+function logName(name, surname) {
+  console.log(`Моё имя ${name} ${surname}`);
 }
+
+logName('Alina', 'Bakhvalova');
+
+function countDepositSum(depositInUSD, month, rateInPercent) {
+  const sum = depositInUSD * (1 + rateInPercent / 100 / 12) ** month;
+  return sum;
+
+  //или
+  //return depositInUSD * (1 + rateInPercent / 100 / 12) ** month;
+}
+
+const example1 = countDepositSum(2000, 24, 7);
+console.log(example1);
+
+const example2 = countDepositSum(1000, 48, 10);
+console.log(example2);
+
+console.log(countDepositSum(1000, 24, 12));
