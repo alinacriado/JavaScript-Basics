@@ -1,51 +1,27 @@
-const role = 'manager';
+const fordFocusPrice = 10000;
+const budget = 20000;
+let message;
 
-if (role === 'manager') {
-  console.log('менеджер');
-} else if (role === 'admin') {
-  console.log('админ');
-} else if (role === 'ceo') {
-  console.log('CEO');
+if (budget > fordFocusPrice) {
+  message = 'Ford';
 } else {
-  console.log('Мы тебя не знаем')
+  message = 'Велосипед';
+}
+console.log(`Могу купить ${message}`);
+// или
+console.log(`Могу купить ${budget > fordFocusPrice ? 'Ford' : 'Велосипед'}`);
+
+//Числа
+
+10 > 0 ? console.log('Больше 0') : console.log('Не больше 0');
+
+if (10 > 0) {
+  console.log('Больше 0');
+} else {
+  console.log('Не больше 0');
 }
 
-switch (role) {
-  case 'manager': // role === 'manager' (строгое равенство)
-    console.log('менеджер');
-    break; // чтобы дальше условия не выполнялись
-  case 'admin':
-    console.log('админ');
-    break;
-  case 'ceo':
-    console.log('CEO');
-    break;
-  default:
-    console.log('Мы тебя не знаем')
-}
+//Альтернатива
 
-switch (role) {
-  case 'manager': //role === 'manager'
-  case 'admin': // без break идет проверка обоих условий
-    console.log('Не руководитель');
-    break;
-  case 'ceo':
-    console.log('CEO');
-    break;
-  default:
-    console.log('Мы тебя не знаем')
-}
-
-const num = 1;
-
-switch (true) {
-  case num > 0: // true === num > 0
-    console.log('Положительно');
-    break;
-  case num < 0:
-    console.log('Отрицательно');
-    break;
-  default:
-    console.log('ноль');
-}
-
+const str = 10 > 0 ? 'Больше 0' : 'Не больше 0'; // строка передается с в переменную
+console.log(str);
