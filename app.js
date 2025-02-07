@@ -1,17 +1,15 @@
-function powerOfTwo(number) {
-  return number * number;
+function canAccessWebsite(age) {
+  if (age < 18) {
+    return false;
+  }
+  return true; //else {
+               //   return true;
+               // }
 }
-console.log(powerOfTwo(5));
+console.log(canAccessWebsite(16));
 
-const poft = (num) => num * num;
+const canAccessWebsite2 = age => age < 18 ? false : true;
+console.log(canAccessWebsite2(18));
 
-const poft2 = num => num * num;
-
-const poft3 = num => {
-  console.log(num);
-  return num * num;
-};
-
-const poft4 = (num, i) => num * i;
-
-console.log(poft(5));
+const canAccessWebsite3 = age => age < 18 ? 'No' : 'Yes';
+console.log(canAccessWebsite3(19));
