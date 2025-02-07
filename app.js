@@ -1,17 +1,59 @@
-const KG_IN_USD = 7;
-const KM_IN_USD = 5;
+/*
+	Пользователь:
+	- Возраст
+	- Наличие работы
+	- Деньги
+	Нужно проверить может ли он купить новый MacBook за 2000$?
+	Он может брать не только свои деньги, но и взять кредит.
+	Ему дадут 500$, только если ему больше 24-х лет и он
+	имеет работу, 100$ если ему просто больше 24-х лет и 0 в
+	ином случае.
+	Напишите функцию, которая принимает данные пользователя
+	и товара и возвращает true или false;
+*/
 
-function calculateWeightCost(presentWeight) {
-  return presentWeight * KG_IN_USD;
+const MacBookPrice = 2000;
+const deposit = 1000;
+
+/* function computeCreditSum(age, haveJob) {
+	if (age > 24 && haveJob) {
+		return 500;
+	} else if (age > 24) {
+		return 100;
+	} return 0;
 }
 
-function calculateDistanceCost(distance) {
-  return distance * KM_IN_USD;
+function canBuy(age, haveJob, deposit, productPrice) {
+	const userMoney = computeCreditSum(age, haveJob) + deposit;
+	console.log(`У вас ${userMoney}$`);
+
+	if (userMoney >= productPrice) {
+		return true;
+	} else {
+		return false;
+	}
+} */
+
+function computeCreditSum(age, haveJob) {
+	return age > 24 && haveJob ? 500 : age > 24 ? 100 : 0;
 }
 
-function getExchangePrice(present1, present2, distance) {
-  const price1 = calculateWeightCost(present1);
-  const price2 = calculateWeightCost(present2);
-  const distanceCost = calculateDistanceCost(distance);
-  return price1 + price2 + distanceCost;
+function canBuy(age, haveJob, deposit, productPrice) {
+	const userMoney = computeCreditSum(age, haveJob) + deposit;
+	console.log(`У вас ${userMoney}$`);
+
+	return userMoney >= productPrice;
 }
+
+console.log(canBuy(23, true, 1000, MacBookPrice));
+
+/* function computeCreditSum(age, haveJob) {
+	switch(true) {
+		case age > 24 && haveJob:
+			return 500;
+		case age > 24:
+			return 100;
+		default:
+			return 0;
+	}
+} */
