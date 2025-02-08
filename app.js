@@ -1,15 +1,23 @@
-const role1 = 'admin';
-const role2 = 'user';
-const role3 = 'superuser';
+const users = ['Аня', 'Вика', 'Катя'];
+users[2] = 'Кристина'; //замена
 
-const roles = ['admin', 'user', 'superuser'];
-const userInfo = ['Anna', 25];
+//push
+users.push('Никита'); // добавить в конец
+const arrLength = users.push('Никита'); // операция возвращает длиину массива с добавленным элементом
+console.log(arrLength);
 
-console.log(roles);
-console.log(roles[0]);
-console.log(roles.length);
-console.log(roles[roles.length - 1]);
+//unshift
+users.unshift('Вася'); // добавить в начало
+const arrLength2 = users.unshift('Никита'); // операция возвращает длиину массива с добавленным элементом
+console.log(users);
 
-console.log(roles.at(0));
+//pop
+users.pop(); // удалить последний элемент
+const el = users.pop(); // возвращает удаляемый элемент
+console.log(el);
+console.log(users);
 
-const userNames = new Array('Vasiya', 'Petiya', 'Masha');
+//shift
+users.shift(); // // удалить элемент в начале
+const el2 = users.shift(); // возвращает удаляемый элемент
+console.log(users);
