@@ -1,23 +1,13 @@
-const users = ['Аня', 'Вика', 'Катя'];
-users[2] = 'Кристина'; //замена
+const roles = ['user', 'admin', 'manager'];
 
-//push
-users.push('Никита'); // добавить в конец
-const arrLength = users.push('Никита'); // операция возвращает длиину массива с добавленным элементом
-console.log(arrLength);
+const elIndex = roles.indexOf('admin');
+console.log(elIndex);
 
-//unshift
-users.unshift('Вася'); // добавить в начало
-const arrLength2 = users.unshift('Никита'); // операция возвращает длиину массива с добавленным элементом
-console.log(users);
+const elIndex2 = roles.indexOf('superuser');
+console.log(elIndex2); // -1 = не найден
 
-//pop
-users.pop(); // удалить последний элемент
-const el = users.pop(); // возвращает удаляемый элемент
-console.log(el);
-console.log(users);
+console.log(roles.includes('admin'));
 
-//shift
-users.shift(); // // удалить элемент в начале
-const el2 = users.shift(); // возвращает удаляемый элемент
-console.log(users);
+if (roles.includes('admin')) {
+	console.log('доступ есть');
+}
