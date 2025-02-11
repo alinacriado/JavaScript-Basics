@@ -1,8 +1,7 @@
-const arr = ['!', 'JS', 'люблю', 'Я'];
-let arrayReversed = [];
+const tasks = [[1, 'task 1'], [2, 'task 2']];
 
-for (let i = arr.length - 1; i >= 0; i--) {
-  arrayReversed.push(arr[i]);
+for (let i = 0; i < tasks.length; i++) {
+  for (let j = 0; j < tasks[i].length; j++) {
+    console.log(tasks[i][j]);
+  }
 }
-
-console.log(arrayReversed.join(' '));
