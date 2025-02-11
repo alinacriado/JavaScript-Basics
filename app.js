@@ -5,20 +5,19 @@ const addTask = (task) => {
 }
 
 const removeTaskByName = (taskName) => {
+  const taskIndex = tasks.indexOf(taskName);
   if (!tasks.includes(taskName)) {
     return;
   }
-  const taskIndex = tasks.indexOf(taskName);
-  tasks.splice(taskIndex, 1);
+  return tasks.splice(taskIndex, 1);
 }
 
 const doPriority = (taskName) => {
-  if (!tasks.includes(taskName)) {
+  const result = removeTaskByName(taskName);
+  if (!result) {
     return;
   }
-  const taskIndex = tasks.indexOf(taskName);
-  tasks.splice(taskIndex, 1);
-  tasks.unshift(taskName);
+  tasks.unshift(result[0]);
 }
 
 addTask('Задача 2');
