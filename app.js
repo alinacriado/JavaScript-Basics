@@ -1,5 +1,23 @@
-const data = [1, 2, 3, 4, 5, 6];
-const [one, two, ...others] = data;
-console.log(one, two, others); // 1 2 [3, 4, 5, 6]
+const url = 'https://purpleschool.ru/course/javascript';
 
-// ...others можно использовать только в конце
+
+function getLink(link) {
+  const protoсol = link.split('://')[0];
+  const linkBody = link.split('://')[1];
+  const [domen, ...others] = linkBody.split('/');
+  const path = others.join('/');
+
+  if (protoсol === 'https' || protoсol === 'https') {
+    if (domen.includes('.')) {
+      return;
+    }
+    console.log(`Протокол: ${protoсol}`);
+    console.log(`Домменное имя: ${domen}`);
+    console.log(`Путь внутри сайта: /${path}`);
+  }
+}
+
+getLink(url);
+
+const name = 'Misha';
+console.log(name.includes('j'));
