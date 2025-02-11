@@ -1,23 +1,13 @@
-const url = 'https://purpleschool.ru/course/javascript';
+// console.log('Наш баланс 1$');
+// console.log('Наш баланс 2$');
+// console.log('Наш баланс 3$');
+// console.log('Наш баланс 4$');
+// console.log('Наш баланс 5$');
+// console.log('Наш баланс 6$');
+// console.log('Наш баланс 7$');
+// console.log('Наш баланс 8$');
+// console.log('Наш баланс 9$');
 
-
-function getLink(link) {
-  const protoсol = link.split('://')[0];
-  const linkBody = link.split('://')[1];
-  const [domen, ...others] = linkBody.split('/');
-  const path = others.join('/');
-
-  if (protoсol === 'https' || protoсol === 'https') {
-    if (domen.includes('.')) {
-      return;
-    }
-    console.log(`Протокол: ${protoсol}`);
-    console.log(`Домменное имя: ${domen}`);
-    console.log(`Путь внутри сайта: /${path}`);
-  }
+for (let i = 1; i < 10; i++) {
+  console.log(`Наш баланс ${i}$`);
 }
-
-getLink(url);
-
-const name = 'Misha';
-console.log(name.includes('j'));
