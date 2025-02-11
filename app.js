@@ -1,30 +1,14 @@
-const tasks = ['Задача 1'];
+const userData = ['Антон', 18, 'Москва'];
 
-const addTask = (task) => {
-  tasks.push(task);
-}
+// const userName = userData[0];
+// const age = userData[1];
+// const city = userData[2];
 
-const removeTaskByName = (taskName) => {
-  const taskIndex = tasks.indexOf(taskName);
-  if (!tasks.includes(taskName)) {
-    return;
-  }
-  return tasks.splice(taskIndex, 1);
-}
+const [userName, age, city] = userData;
+console.log(userName, age, city);
 
-const doPriority = (taskName) => {
-  const result = removeTaskByName(taskName);
-  if (!result) {
-    return;
-  }
-  tasks.unshift(result[0]);
-}
+// const [userName, age] = userData;
+// console.log(userName, age);
 
-addTask('Задача 2');
-addTask('Задача 3');
-addTask('Задача 4');
-console.log(tasks);
-removeTaskByName('Задача 7');
-console.log(tasks);
-doPriority('Задача 4');
-console.log(tasks);
+// const [userName, _, city] = userData;
+// console.log(userName, city);
