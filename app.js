@@ -1,16 +1,13 @@
-// Функции первого порядка - занесена в переменную, передаётся в другую функцию, возвращается из другой функции
-function add(a, b) {
-  return a + b;
+function power(pow) {
+  return function (num) {
+    return num ** pow;
+  }
 }
 
-function substract(a, b) {
-  return a - b;
-}
+const powerOfTwo = power(2); // powerOfTwo становится функцией возведения в степень 2
+console.log(powerOfTwo(6)); // 36
 
-// Функция высшего порядка - принимает и/или возвращает другую функцию
-function calculate(a, b, fn) { // fn - callback функция (с любым названием)
-  const res = fn(a, b);
-  return res;
-}
+const powerOfThree = power(3);
+console.log(powerOfThree(2));
 
-console.log(calculate(3, 4, add));
+console.log(power(4)(5)); // 5 ** 4
