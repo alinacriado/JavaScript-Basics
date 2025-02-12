@@ -1,33 +1,17 @@
-const users = ['Вася', 'Маша', 'Катя', 'Аня'];
-console.log(users); // ['Вася', 'Маша', 'Катя', 'Аня']
-users.sort();
-console.log(users); // ['Аня', 'Вася', 'Катя', 'Маша']
+const arr = [1, 2, 3, 4, 5];
+console.log(new Array(1, 2, 3, 4, 5));
 
-const operations = [100, -300, -100, 50, 480];
-console.log(operations); // [100, -300, -100, 50, 480]
-operations.sort();
-console.log(operations); // [-100, -300, 100, 480, 50] - отсортировались как строки
+const arr2 = new Array(5); // [empty × 5]
+arr2.fill(1); // [1, 1, 1, 1, 1]
 
-//return < 0 - a, b - сохраняем порядок
-//return > 0 - b, a - меняем порядок
-operations.sort((a, b) => {
-  if (a > b) {
-    return 1;
-  }
-  if (a < b) {
-    return -1;
-  }
-});
-// operations.sort((a, b) => a - b);
-console.log(operations); // [-300, -100, 50, 100, 480] - сортировка по возрастанию
+const arr3 = new Array(5);
+arr3.fill(1, 0, 3);
+console.log(arr3); // [1, 1, 1, empty × 2]
+arr3.fill(2, 3, 5);
+console.log(arr3); // [1, 1, 1, 2, 2]
 
-operations.sort((a, b) => {
-  if (a < b) {
-    return 1;
-  }
-  if (a > b) {
-    return -1;
-  }
-});
+// const arr4 = Array.from({ length: 5 }, () => 5);
+// console.log(arr4); // [5, 5, 5, 5, 5]
 
-console.log(operations); // [480, 100, 50, -100, -300]
+const arr4 = Array.from({ length: 5 }, (cur, i) => i + 1);
+console.log(arr4); // [1, 2, 3, 4, 5]
