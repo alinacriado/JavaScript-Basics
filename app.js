@@ -1,13 +1,33 @@
-const prices = [[2, 4], [3, 4], [10, 20]];
-const res = prices.flat();
-console.log(res); // [2, 4, 3, 4, 10, 20]
+const users = ['Вася', 'Маша', 'Катя', 'Аня'];
+console.log(users); // ['Вася', 'Маша', 'Катя', 'Аня']
+users.sort();
+console.log(users); // ['Аня', 'Вася', 'Катя', 'Маша']
 
-const prices2 = [[2, 4], [3, 4], [10, [20, 50]]];
-const res2 = prices2.flat();
-console.log(res2); // [2, 4, 3, 4, 10, [20, 50]]
+const operations = [100, -300, -100, 50, 480];
+console.log(operations); // [100, -300, -100, 50, 480]
+operations.sort();
+console.log(operations); // [-100, -300, 100, 480, 50] - отсортировались как строки
 
-const res3 = prices2.flat(2);
-console.log(res3); // [2, 4, 3, 4, 10, 20, 50]
+//return < 0 - a, b - сохраняем порядок
+//return > 0 - b, a - меняем порядок
+operations.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  }
+  if (a < b) {
+    return -1;
+  }
+});
+// operations.sort((a, b) => a - b);
+console.log(operations); // [-300, -100, 50, 100, 480] - сортировка по возрастанию
 
-const res4 = prices.flatMap(el => el.concat(1)); // prices.map(...).flat();
-console.log(res4); // [2, 4, 1, 3, 4, 1, 10, 20, 1]
+operations.sort((a, b) => {
+  if (a < b) {
+    return 1;
+  }
+  if (a > b) {
+    return -1;
+  }
+});
+
+console.log(operations); // [480, 100, 50, -100, -300]
