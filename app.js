@@ -1,18 +1,11 @@
-const score = [5, 10, 0, 15];
+const transactionsInUSD = [10, -7, 50, -10, 100];
 
-// for (const el of score) {
-//   console.log(`Раунд: ${el}`);
-// }
-// for (const [i, el] of score.entries()) {
-//   console.log(`Раунд ${i + 1}: ${el}`);
-// }
+const transactionsInRUB = [];
+for (const transaction of transactionsInUSD) {
+  transactionsInRUB.push(transaction * 60);
+}
+console.log(transactionsInRUB); // [600, -420, 3000, -600, 6000]
 
-score.forEach((el) => {
-  console.log(`Раунд: ${el}`);
-});
+const transactionsInRUB2 = transactionsInUSD.map((transaction) => transaction * 60); // map возвращает новый массив
 
-score.forEach((el, i) => {
-  console.log(`Раунд ${i + 1}: ${el}`);
-});
-// (5, 0) => { ... }
-// (10, 1) => { ... }
+console.log(transactionsInRUB2); // [600, -420, 3000, -600, 6000]
