@@ -1,30 +1,19 @@
+const users = [
+  { name: 'Вася', age: 30 },
+  { name: 'Катя', age: 18 },
+  { name: 'Аня', age: 40 },
+  { name: 'Петя', age: 25 }
+];
 
-const user = {
-  name: 'Вася',
-  surname: 'Пупкин',
-  age: 24,
-  skills: [
-    'програмирование',
-    'готовка'
-  ],
-  educationBasic: 'Школа',
-  educationPro: 'МФТИ'
-};
+// users.sort((a, b) => {
+//   if (a.age < b.age) {
+//     return -1;
+//   }
+//   if (a.age > b.age) {
+//     return 1;
+//   }
+// });
 
-console.log(user.name);
-console.log(user.skills); // использовать помаксимум
-console.log(user['skills']); // для расчетеных или принимаемых
-console.log(user.skills[0]); // програмирование
+users.sort((a, b) => a.age - b.age);
 
-const level = 'Pro';
-console.log(user['education' + level]); // МФТИ
-
-const res = 'age';
-console.log(user[res]); // 24
-
-user.city = 'Москва'; // новое
-// user['city'] = 'Москва'; // новое
-console.log(user);
-
-user.age = 30; // перезаписать
-// user['age'] = 30; // перезаписать
+console.log(users);
