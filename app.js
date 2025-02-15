@@ -1,5 +1,11 @@
-const card  = '2342834503458353';
-// ************8353
-
-const cardHidden = card.slice(-4).padStart(card.length, '*');
-console.log(cardHidden);
+const userArray = ['Вася', 'Пупкин', 24];
+const user = {
+  name: 'Вася',
+  surname: 'Пупкин',
+  age: 24,
+  skills: [
+    'програмирование',
+    'готовка'
+  ],
+  1: 1
+};
