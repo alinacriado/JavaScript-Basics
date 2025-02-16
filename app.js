@@ -1,29 +1,32 @@
-const cities = {
-  msk: {
-    let: 200,
-    temp: 25
-  },
-  spb: {
-    let: 100,
-    temp: 20
-  }
+// Деструктуризация
+
+// const arr = [1, 2, 3];
+// const [x, y, z] = arr;
+// console.log(x)
+
+let user = {
+  name: 'Vasia',
+  age: 40,
+  city: 'Moscow'
 };
 
-// let citiesCount = 0;
-let citiesCount = Object.keys(cities).length; // console.log(Object.keys(cities)); // ['msk', 'spb']
-let sumTemp = 0;
+const { name, city } = user;
+console.log(name);
+console.log(city);
 
-for (const key in cities) {
-  // citiesCount++;
-  sumTemp += cities[key].temp;
+// rest
+const { age, ...UserWithoutAge } = user;
+console.log(UserWithoutAge); // {name: 'Vasia', city: 'Moscow'}
+
+// spread
+
+const additionalData = {
+  skills: ['дизайн', 'разработка'],
+  creditCard: '2342546738401522'
+};
+
+user = {
+  ...user,
+  ...additionalData
 }
-
-console.log(sumTemp / citiesCount);
-
-for (const key in cities) {
-  console.log(key); // msk spb
-}
-
-for (const key of Object.keys(cities)) {
-  console.log(key); // msk spb
-}
+console.log(user)
