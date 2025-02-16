@@ -1,41 +1,29 @@
-/*
-  Релизовать методы увеличения и уменьшения баланса,
-  при котором каждая операция сохраняется в массив
-  operations в виде { reason: 'Оплата налогов', sum: -100 }.
-  Возвращается true, если успешно и false, если не хватает баланса.
-   Так же реализовать метод вывода числа операций по кошельку
-*/
-
-const wallet = {
-  balance: 0,
-  operations: [],
-  balanceIncrease: function (userReason, userSum) {
-    this.balance += userSum;
-    this.operations.push({
-      reason: userReason,
-      sum: userSum
-    });
-    return true;
+const cities = {
+  msk: {
+    let: 200,
+    temp: 25
   },
-  balanceDecrease: function (userReason, userSum) {
-    if (this.balance < userSum) {
-      console.log(false);
-      return false;
-    }
-    this.balance -= userSum;
-    this.operations.push({
-      reason: userReason,
-      sum: -userSum
-    });
-    return true;
-  },
-  operationsQuantity: function () {
-    console.log(this.operations.length);
+  spb: {
+    let: 100,
+    temp: 20
   }
 };
 
-wallet.balanceIncrease('ЗП', 1000);
-wallet.balanceDecrease('Налоги', 300);
-wallet.balanceDecrease('Купить телефон', 900);
-console.log(wallet);
-wallet.operationsQuantity();
+// let citiesCount = 0;
+let citiesCount = Object.keys(cities).length; // console.log(Object.keys(cities)); // ['msk', 'spb']
+let sumTemp = 0;
+
+for (const key in cities) {
+  // citiesCount++;
+  sumTemp += cities[key].temp;
+}
+
+console.log(sumTemp / citiesCount);
+
+for (const key in cities) {
+  console.log(key); // msk spb
+}
+
+for (const key of Object.keys(cities)) {
+  console.log(key); // msk spb
+}
