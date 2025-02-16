@@ -1,19 +1,22 @@
 const users = [
-  { name: 'Вася', age: 30 },
-  { name: 'Катя', age: 18 },
-  { name: 'Аня', age: 40 },
-  { name: 'Петя', age: 25 }
+  {
+    name: 'Вася',
+    surname: 'Пупкин',
+    age: 30,
+    skills: ['разработка', 'DevOps']
+  },
+  {
+    name: 'Катя',
+    surname: 'Белова',
+    age: 18,
+    skills: ['дизайн']
+  }
 ];
 
-// users.sort((a, b) => {
-//   if (a.age < b.age) {
-//     return -1;
-//   }
-//   if (a.age > b.age) {
-//     return 1;
-//   }
-// });
-
-users.sort((a, b) => a.age - b.age);
-
-console.log(users);
+const usersChanged = users.map(user => {
+  return {
+    fullName: `${user.name} ${user.surname}`,
+    skillNum: user.skills.length
+  };
+});
+console.log(usersChanged);
