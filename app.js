@@ -1,32 +1,15 @@
-// Деструктуризация
+const cities = {
+  msk: {
+    temp: {
+      celcius: 25
+    }
+  },
+  spb: {
 
-// const arr = [1, 2, 3];
-// const [x, y, z] = arr;
-// console.log(x)
-
-let user = {
-  name: 'Vasia',
-  age: 40,
-  city: 'Moscow'
-};
-
-const { name, city } = user;
-console.log(name);
-console.log(city);
-
-// rest
-const { age, ...UserWithoutAge } = user;
-console.log(UserWithoutAge); // {name: 'Vasia', city: 'Moscow'}
-
-// spread
-
-const additionalData = {
-  skills: ['дизайн', 'разработка'],
-  creditCard: '2342546738401522'
-};
-
-user = {
-  ...user,
-  ...additionalData
+  }
 }
-console.log(user)
+
+console.log(cities.msk.temp.celcius); // 25
+console.log(cities.spb.temp); // undefined
+// console.log(cities.spb.temp.celcius); // ошибка
+console.log(cities.spb?.temp?.celcius); // проверка на наличие, при первом же false возвращает undefined
