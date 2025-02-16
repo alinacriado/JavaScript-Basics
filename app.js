@@ -1,22 +1,18 @@
-const users = [
-  {
-    name: 'Вася',
-    surname: 'Пупкин',
-    age: 30,
-    skills: ['разработка', 'DevOps']
-  },
-  {
-    name: 'Катя',
-    surname: 'Белова',
-    age: 18,
-    skills: ['дизайн']
+const user = {
+  name: 'Вася',
+  surname: 'Пупкин',
+  age: 30,
+  // getFullName: function () {
+  //   return user.name + ' ' + user.surname;
+  // } не надежна при смене наименования
+  getFullName: function () {
+    console.log(this); // получим исходный объект
+    return this.name + ' ' + this.surname;
   }
-];
+};
 
-const usersChanged = users.map(user => {
-  return {
-    fullName: `${user.name} ${user.surname}`,
-    skillNum: user.skills.length
-  };
-});
-console.log(usersChanged);
+// const getFullName = function (user) {
+//   return user.name + ' ' + user.surname;
+// };
+
+console.log(user.getFullName());
