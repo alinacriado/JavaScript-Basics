@@ -1,55 +1,18 @@
-const wareHouse = {
-  goods: [],
-  findGoodById: function (id) {
-    return this.goods.find(el => el.id === id);
-  },
-  addGood: function (product) {
-    // const existedProduct = this.goods.find(el => el.id === product.id);
-    const existedProduct = this.findGoodById(product.id);
-    if (existedProduct) {
-      return;
-    }
-    this.goods.push(product);
-  },
-  getWeightKg: function () {
-    // return this.goods.reduce((acc, product) => {
-      // if (product.weight?.kg === undefined) {
-      //   return acc;
-      // }
-      // return acc += product.weight.kg;
-    // }, 0);
-    return this.goods.reduce((acc, product) => {
-      return acc += product.weight?.kg ? product.weight.kg : 0;
-    }, 0);
-  }
-};
-
-// товары
-const car = {
+const user = {
+  name: 'Anton',
   id: 1,
-  weight: {
-    kg: 1000
-  },
-  brand: 'Ford'
+  roles: ['Admin']
 };
 
-const chair = {
-  id: 2,
-  weight: {
-    kg: 2
-  }
-};
+// const newUser = user;
+// newUser.name = 'newUser';
+// console.log(user); // {name: 'newUser', id: 1, roles: Array(1)}
+// console.log(newUser); // {name: 'newUser', id: 1, roles: Array(1)}
 
-const paper = {
-  id: 3,
-  color: 'red'
+const newUser2 = {
+  ...user
 };
-
-wareHouse.addGood(car);
-wareHouse.addGood(chair);
-wareHouse.addGood(car);
-wareHouse.addGood(paper);
-console.log(wareHouse);
-console.log(wareHouse.findGoodById(4));
-// wareHouse.findGoodById(4);
-console.log(wareHouse.getWeightKg());
+newUser2.name = 'newUser';
+newUser2.roles.push('user');
+console.log(user); // {name: 'Anton', id: 1, roles: Array(2)}
+console.log(newUser2); // {name: 'newUser', id: 1, roles: Array(2)}
