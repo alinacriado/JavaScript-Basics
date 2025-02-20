@@ -86,3 +86,57 @@ function copySorted(arr) {
 const languagesSorted = copySorted(languages);
 // console.log('Было: ' + languages);
 // console.log('Стало: ' + languagesSorted);
+
+/*
+  У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+
+  Напишите код, который создаст ещё один массив объектов с параметрами id и fullName,
+  где fullName – состоит из name и surname.
+*/
+
+/* const vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+const petya = { name: "Петя", surname: "Иванов", id: 2 };
+const masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+const users = [ vasya, petya, masha ];
+
+const usersMapped = users.map(user => ({
+  fullName: user.name + ' ' + user.surname,
+  id: user.id
+}));
+console.log(usersMapped); */
+
+/*
+  Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age
+  и сортирует их по нему.
+*/
+
+/* let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+function sortByAge(array) {
+  return array.sort((a, b) => a.age - b.age);
+}
+
+sortByAge(users);
+console.log(users)
+ */
+
+function unique(arr) {
+  const newArr = [];
+  for (const word of arr) {
+    if (!newArr.includes(word)) {
+      newArr.push(word);
+    }
+  }
+
+  return newArr;
+}
+
+let strings = ["кришна", "кришна", "харе", "харе",
+  "харе", "харе", "кришна", "кришна", ":-O"
+];
+console.log( unique(strings) );
