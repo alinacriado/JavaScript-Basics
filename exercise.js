@@ -139,4 +139,4 @@ function unique(arr) {
 let strings = ["кришна", "кришна", "харе", "харе",
   "харе", "харе", "кришна", "кришна", ":-O"
 ];
-console.log( unique(strings) );
+// console.log( unique(strings) );
