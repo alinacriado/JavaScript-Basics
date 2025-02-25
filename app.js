@@ -1,20 +1,15 @@
 'use strict';
 
-function removePassword(reset) {
-  if (reset) {
-    this.password = undefined;
-  } else {
-    this.password = '1';
+function changeBalance() {
+  let balance = 0;
+  return function(sum) {
+    balance += sum;
+    console.log(balance);
   }
 }
 
-const user = {
-  name: 'Petya',
-  password: '1786'
-}
-
-const resetUserPassword = removePassword.bind(user, true);
-resetUserPassword();
-// removePassword.call(user, true);
-console.log(user);
+const change = changeBalance();
+change(100); // 10-
+change(-50); // 50
+change(200); // 250
 
