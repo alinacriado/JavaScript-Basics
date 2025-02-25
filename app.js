@@ -1,15 +1,26 @@
 'use strict';
 
-function changeBalance() {
-  let balance = 0;
-  return function(sum) {
-    balance += sum;
-    console.log(balance);
+const userInfo = {
+  balance: 0,
+  operations: 0,
+  increase(sum) {
+    this.balance += sum;
+    this.operations++
+  }
+};
+
+function user() {
+  const userObject = { ...userInfo };
+  return function() {
+    return userObject;
   }
 }
+const user1 = user();
+user1().increase(100);
+user1().increase(200);
+console.log(user1());
 
-const change = changeBalance();
-change(100); // 10-
-change(-50); // 50
-change(200); // 250
-
+const user2 = user();
+user2().increase(100);
+user2().increase(50);
+console.log(user2());
