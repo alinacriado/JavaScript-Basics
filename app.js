@@ -6,8 +6,13 @@ function submitForm() {
     return;
   }
   document.querySelector('.panel').innerText = input;
+  // localStorage.setItem('text', JSON.stringify({ text: input }));
   document.querySelector('.input').value = '';
   document.querySelector('.notification').classList.add('notification_active');
+  const textString = JSON.stringify({
+    text: input
+  });
+  localStorage.setItem('text', textString);
 }
 
 function inputChanged(e) {
@@ -16,7 +21,8 @@ function inputChanged(e) {
   }
 };
 
-const obj = JSON.parse('{ "a": 1 }');
-console.log(obj.a);
-const str = JSON.stringify(obj);
-console.log(str);
+// const obj = JSON.parse('{ "a": 1 }');
+// console.log(obj);
+// const str = JSON.stringify(obj);
+// console.log(str);
+
