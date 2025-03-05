@@ -1,22 +1,75 @@
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habbit App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css">
 </head>
 
-<body style="background-color: #1c1b21; text-align: center">
-  <div class="panel">I love this!</div>
-  <input class="input" onkeydown="inputChanged(event)" />
-  <button class="button" onclick="submitForm()">Change</button>
-  <div class="notification">Changed!</div>
-  <div class="test"></div>
-  <script src="./app.js"></script>
+<body>
+  <div class="app">
+    <div class="panel">
+      <img src="./images/logo.svg" alt="Логотип Habbit" class="logo">
+      <div class="menu">
+        <button class="menu__item menu__item--active">
+          <img src="./images/dumbbell.svg" alt="Гантель">
+        </button>
+        <button class="menu__item">
+          <img src="./images/water.svg" alt="Вода">
+        </button>
+        <button class="menu__item">
+          <img src="./images/food.svg" alt="Еда">
+        </button>
+        <button class="menu__add">
+          <img src="./images/add.svg" alt="Добавление привычки">
+        </button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">
+        <h1>Отжимания</h1>
+        <div class="progress">
+          <div class="progress__text">
+            <div class="progress__name">Прогресс</div>
+            <div class="progress__percent">80%</div>
+          </div>
+          <div class="progress__bar">
+            <div class="progress__cover-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="habbits">
+          <div class="habbit">
+            <div class="habbit__day">День 1</div>
+            <div class="habbit__content">
+              <div class="habbit__comment">Первый подход всегда даётся тяжело</div>
+              <button class="habbit__delete">
+                <img src="./images/trashbin.svg" alt="Удалить">
+              </button>
+            </div>
+          </div>
+          <div class="habbit">
+            <div class="habbit__day">День 2</div>
+            <form class="habbit__form">
+              <div class="input__wrapper">
+                <input type="text" placeholder="Комментарий" class="input habbit__input">
+              </div>
+              <button class="habbit__ready">
+                Готово
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/app.js"></script>
 </body>
 
 </html>
