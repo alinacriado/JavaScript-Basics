@@ -39,6 +39,12 @@ button {
   gap: 25px;
 }
 
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .menu__item {
   padding: 10px;
   background-color: #fff;
