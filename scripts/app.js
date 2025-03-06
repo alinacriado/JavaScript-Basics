@@ -74,7 +74,7 @@ function rerenderContent(activeHabbit) {
     habbit.innerHTML = `<div class="habbit__day">День ${days.indexOf(day) + 1}</div>
             <div class="habbit__content">
               <div class="habbit__comment">${day.comment}</div>
-              <button class="habbit__delete">
+              <button class="habbit__delete" onclick="removeDay(${days.indexOf(day)})">
                 <img src="./images/trashbin.svg" alt="Удалить">
               </button>
             </div>`;
@@ -109,7 +109,7 @@ function addDays(event) {
       return {
         ...habbit,
         days: habbit.days.concat([{ comment }])
-      }
+      };
     }
     return habbit;
   });
@@ -118,6 +118,19 @@ function addDays(event) {
   saveData();
 }
 
+function removeDay(dayIndex) {
+  habbits = habbits.map(habbit => {
+    if(habbit.id === globalActiveHabbitId) {
+      habbit.days.splice(dayIndex, 1);
+      return {
+        ...habbit
+      };
+    }
+    return habbit;
+  });
+  rerender(globalActiveHabbitId);
+  saveData();
+}
 
 /* init */
 (() =>  {
