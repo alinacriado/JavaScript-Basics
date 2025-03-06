@@ -10,9 +10,12 @@ const page = {
     title: document.querySelector('.title'),
     progressPercent: document.querySelector('.progress__percent'),
     progressCoverBar: document.querySelector('.progress__cover-bar'),
+  },
+  content: {
+    habbitList: document.querySelector('.habbit__list'),
+    nextDay: document.querySelector('.habbit__day')
   }
 }
-
 /* utils */
 function loadData() {
   const habbitsString = localStorage.getItem(HABBIT_KEY);
@@ -28,9 +31,6 @@ function saveData() {
 
 /* rerender */
 function rerenderMenu(activeHabbit) {
-  if (!activeHabbit) {
-    return;
-  }
   for (const habbit of habbits) {
     const existed = document.querySelector(`[menu-habbit-id="${habbit.id}"]`);
     if (!existed) {
@@ -56,9 +56,6 @@ function rerenderMenu(activeHabbit) {
 }
 
 function rerenderHeader(activeHabbit) {
-  if (!activeHabbit) {
-    return
-  }
   page.header.title.innerHTML = activeHabbit.name;
   const progress = activeHabbit.days.length / activeHabbit.target > 1
     ? 100
@@ -67,16 +64,41 @@ function rerenderHeader(activeHabbit) {
   page.header.progressCoverBar.setAttribute('style', `width: ${progress}%`);
 }
 
+function rerenderContent(activeHabbit) {
+  page.content.habbitList.innerHTML = '';
+  const days = activeHabbit.days;
+  for (const day of days) {
+    const habbit = document.createElement('div');
+    habbit.classList.add('habbit');
+    habbit.innerHTML = `<div class="habbit__day">День ${days.indexOf(day) + 1}</div>
+            <div class="habbit__content">
+              <div class="habbit__comment">${day.comment}</div>
+              <button class="habbit__delete">
+                <img src="./images/trashbin.svg" alt="Удалить">
+              </button>
+            </div>`;
+    page.content.habbitList.appendChild(habbit);
+  }
+  page.content.nextDay.innerText = `День ${days.length + 1}`
+}
+
 function rerender(activeHabbitId) {
   const activeHabbit = habbits.find(habbit => habbit.id === activeHabbitId)
+  if (!activeHabbit) {
+    return;
+  }
   rerenderMenu(activeHabbit);
   rerenderHeader(activeHabbit);
+  rerenderContent(activeHabbit);
 }
+
+
 
 /* init */
 (() =>  {
   loadData();
   rerender(1);
 })();
+
 
 console.log(habbits);
