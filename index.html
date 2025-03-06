@@ -49,11 +49,11 @@
         <div class="habbit__list"></div>
         <div class="habbit">
           <div class="habbit__day">День _</div>
-          <form class="habbit__form">
+          <form class="habbit__form" onsubmit="addDays(event)">
             <div class="input__wrapper">
-              <input type="text" placeholder="Комментарий" class="input habbit__input">
+              <input name="comment" class="input habbit__input" type="text" placeholder="Комментарий">
             </div>
-            <button class="habbit__ready">
+            <button class="habbit__ready" type="submit">
               Готово
             </button>
           </form>
