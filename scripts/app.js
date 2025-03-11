@@ -15,6 +15,10 @@ const page = {
   content: {
     habbitList: document.querySelector('.habbit__list'),
     nextDay: document.querySelector('.habbit__day')
+  },
+  popup: {
+    index: document.getElementById('popup'),
+    iconField: document.querySelector('.popup__form input[name="icon"]')
   }
 }
 /* utils */
@@ -103,6 +107,7 @@ function addDays(event) {
   form['comment'].classList.remove('error');
   if (!comment) {
     form['comment'].classList.add('error');
+    return;
   }
   habbits = habbits.map(habbit => {
     if (habbit.id === globalActiveHabbitId) {
@@ -130,6 +135,25 @@ function removeDay(dayIndex) {
   });
   rerender(globalActiveHabbitId);
   saveData();
+}
+
+/* popup */
+
+function togglePopup() {
+  if (page.popup.index.classList.contains('cover--hidden')) {
+    page.popup.index.classList.remove('cover--hidden');
+  } else {
+    page.popup.index.classList.add('cover--hidden');
+  }
+}
+
+/* work with habbits */
+
+function setIcon(context, icon) {
+  page.popup.iconField.value = icon;
+  const activeIcon = document.querySelector('.icon.icon--active');
+  activeIcon.classList.remove('icon--active');
+  context.classList.add('icon--active');
 }
 
 /* init */
