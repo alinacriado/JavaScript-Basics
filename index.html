@@ -65,11 +65,11 @@
               <img src="./images/food.svg" alt="Еда">
             </button>
           </div>
-          <form class="popup__form">
+          <form class="popup__form" onsubmit="addHabbits(event)">
             <input type="text" name="name" placeholder="Название" class="input">
             <input type="text" name="icon" placeholder="Иконка" class="input" value="sport">
-            <input type="text" name="target" placeholder="Цель" class="input">
-            <button class="button popup__button">Добавить</button>
+            <input type="number" name="target" placeholder="Цель" class="input">
+            <button class="button popup__button" type="submit">Добавить</button>
           </form>
           <button class="close" onclick="togglePopup()">
             <img src="./images/cross.svg" alt="Закрыть">
